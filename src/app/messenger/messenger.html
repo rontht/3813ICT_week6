@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <form class="d-flex mb-3" (ngSubmit)="sendMessage()">
+        <input type="text" class="form-control me-2" [(ngModel)]="message" name="message"
+            placeholder="Type a message..." />
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+
+    <ul class="list-group">
+        @for(message of messageHistory();track $index){
+        <li class="list-group-item">{{message}}</li>
+        }
+    </ul>
+</div>
